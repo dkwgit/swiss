@@ -16,6 +16,9 @@ func (m *Map[K, V]) Keys() []K {
 			k := groups[g].keys[s]
 			keys[keysIndex] = k
 			keysIndex++
+			if keysIndex >= len(keys) {
+				return keys
+			}
 		}
 		g++
 		if g >= uint32(len(groups)) {
