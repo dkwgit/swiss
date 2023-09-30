@@ -1,7 +1,7 @@
 package swiss
 
 func (m *Map[K, V]) Keys() []K {
-	var allKeys = make([]K, m.Count())
+	var allKeys = make([]K, 0, m.Count())
 	// take a consistent view of the table in case
 	// we rehash during iteration
 	ctrl, groups := m.ctrl, m.groups
